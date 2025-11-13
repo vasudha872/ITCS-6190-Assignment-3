@@ -208,9 +208,11 @@ Once connected via SSH, run the following commands to install the necessary soft
 
         
 ---
-          ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM.jpeg>)
-         ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM-1.jpeg>)
+        
 ## Important Final Notes
 
 * **Stopping the Server**: To stop the Flask application, return to your SSH terminal and press `Ctrl + C`.
 * **Cost Management**: This setup uses free-tier services. To prevent unexpected charges, **stop or terminate your EC2 instance** from the AWS console when you are finished.
+
+         ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM.jpeg>)
+         ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM-1.jpeg>)
