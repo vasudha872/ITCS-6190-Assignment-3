@@ -122,7 +122,7 @@ Navigate to the **Athena** service. Ensure your data source is set to `AwsDataCa
 * **Top 10 Largest Orders in February 2025**: Retrieve the highest-value orders from a specific month.
 
 
-        ![alt text](<WhatsApp Image 2025-11-12 at 11.59.07 PM.jpeg>)
+  ![alt text](<WhatsApp Image 2025-11-12 at 11.59.07 PM.jpeg>)
 ---
 
 ## 7. Launch the EC2 Web Server 🖥️
@@ -201,7 +201,7 @@ Once connected via SSH, run the following commands to install the necessary soft
     You should see a message like `* Running on http://0.0.0.0:5000/`.
 
 2.  Open a web browser and navigate to your instance's public IP address on port 5000:
-    ```
+    ```bash
     http://YOUR_PUBLIC_IP_ADDRESS:5000
     ```
     You should now see your Athena Orders Dashboard!
