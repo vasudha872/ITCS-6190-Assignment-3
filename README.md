@@ -11,11 +11,15 @@ First, set up an S3 bucket with the following folder structure to manage the dat
     * **`processed/`**: For cleaned and filtered data output by the Lambda function.
     * **`enriched/`**: For storing athena query results.
 
+    ![alt text](<WhatsApp Image 2025-11-12 at 11.48.18 PM.jpeg>)
+    ![alt text](<WhatsApp Image 2025-11-12 at 11.58.03 PM.jpeg>)
 ---
 
 ## 2. IAM Roles and Permissions 🔐
 
 Create the following IAM roles to grant AWS services the necessary permissions to interact with each other securely.
+
+![alt text](<WhatsApp Image 2025-11-12 at 11.49.24 PM.jpeg>)
 
 ### Lambda Execution Role
 
@@ -27,6 +31,9 @@ Create the following IAM roles to grant AWS services the necessary permissions t
     * `AmazonS3FullAccess`
 5.  Give the role a descriptive name (e.g., `Lambda-S3-Processing-Role`) and create it.
 
+![alt text](image-2.png)
+
+
 ### Glue Service Role
 
 1.  Create another IAM role for **AWS service** with the use case **Glue**.
@@ -36,6 +43,8 @@ Create the following IAM roles to grant AWS services the necessary permissions t
     * `AWSGlueServiceRole`
 3.  Name the role (e.g., `Glue-S3-Crawler-Role`) and create it.
 
+![alt text](image.png)
+
 ### EC2 Instance Profile
 
 1.  Create a final IAM role for **AWS service** with the use case **EC2**.
@@ -43,6 +52,8 @@ Create the following IAM roles to grant AWS services the necessary permissions t
     * `AmazonS3FullAccess`
     * `AmazonAthenaFullAccess`
 3.  Name the role (e.g., `EC2-Athena-Dashboard-Role`) and create it.
+
+![alt text](image-1.png)
 
 ---
 
@@ -59,6 +70,8 @@ This function will automatically process files uploaded to the `raw/` S3 folder.
 7.  Click **Create function**.
 8.  In the **Code source** editor, replace the default code with LambdaFunction.py code for processing the raw data.
 
+![alt text](<WhatsApp Image 2025-11-12 at 11.53.20 PM.jpeg>)
+
 ---
 
 ## 4. Configure the S3 Trigger ⚡
@@ -72,6 +85,8 @@ Set up the S3 trigger to invoke your Lambda function automatically.
 5.  **Prefix (Required)**: Enter `raw/`. This ensures the function only triggers for files in this folder.
 6.  **Suffix (Recommended)**: Enter `.csv`.
 7.  Check the acknowledgment box and click **Add**.
+
+![alt text](<WhatsApp Image 2025-11-12 at 11.50.49 PM-1.jpeg>)
 
 --- 
 **Start Processing of Raw Data**: Now upload the Orders.csv file into the `raw/` folder of the S3 Bucket. This will automatically trigger the Lambda function.
@@ -89,6 +104,10 @@ The crawler will scan your processed data and create a data catalog, making it q
 6.  **Output**: Click **Add database** and create a new database named `orders_db`.
 7.  Finish the setup and run the crawler. It will create a new table in your `orders_db` database.
 
+![alt text](<WhatsApp Image 2025-11-12 at 11.56.54 PM.jpeg>)
+
+![alt text](image-3.png)
+
 ---
 
 ## 6. Query Data with Amazon Athena 🔍
@@ -102,6 +121,8 @@ Navigate to the **Athena** service. Ensure your data source is set to `AwsDataCa
 * **Average Order Value (AOV) per Customer**: Find the average amount spent per order for each customer.
 * **Top 10 Largest Orders in February 2025**: Retrieve the highest-value orders from a specific month.
 
+
+        ![alt text](<WhatsApp Image 2025-11-12 at 11.59.07 PM.jpeg>)
 ---
 
 ## 7. Launch the EC2 Web Server 🖥️
@@ -185,6 +206,8 @@ Once connected via SSH, run the following commands to install the necessary soft
     ```
     You should now see your Athena Orders Dashboard!
 
+        ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM.jpeg>)
+        ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM-1.jpeg>)
 ---
 
 ## Important Final Notes
