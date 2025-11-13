@@ -206,10 +206,10 @@ Once connected via SSH, run the following commands to install the necessary soft
     ```
     You should now see your Athena Orders Dashboard!
 
-         ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM.jpeg>)
-         ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM-1.jpeg>)
+        
 ---
-
+          ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM.jpeg>)
+         ![alt text](<WhatsApp Image 2025-11-12 at 11.38.36 PM-1.jpeg>)
 ## Important Final Notes
 
 * **Stopping the Server**: To stop the Flask application, return to your SSH terminal and press `Ctrl + C`.
