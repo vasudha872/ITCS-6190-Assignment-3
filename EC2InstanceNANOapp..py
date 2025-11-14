@@ -1,3 +1,4 @@
+import utils.session
 import boto3
 import time
 from flask import Flask
